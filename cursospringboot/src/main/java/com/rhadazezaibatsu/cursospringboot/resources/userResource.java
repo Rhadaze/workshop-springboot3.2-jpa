@@ -9,7 +9,7 @@ import com.rhadazezaibatsu.cursospringboot.entities.User;
 
 @RestController
 @RequestMapping(value = "/users")
-public class userResource {
+public class UserResource {
 	
 	@GetMapping
 	public ResponseEntity<User> findAll(){
