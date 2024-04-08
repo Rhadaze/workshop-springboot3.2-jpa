@@ -2,6 +2,9 @@ package com.rhadazezaibatsu.cursospringboot.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,7 +26,11 @@ public class Order implements Serializable {
 	
 	@ManyToOne
 	@JoinColumn(name = "client_id")
+	@JsonIgnore
 	private User client;
+	
+	public Order() {
+	}
 	
 	public Order(Long id, Instant moment, User client) {
 		super();
@@ -50,5 +57,21 @@ public class Order implements Serializable {
 	public void setClient(User client) {
 		this.client = client;
 	}
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Order other = (Order) obj;
+		return Objects.equals(id, other.id);
+	}
 }

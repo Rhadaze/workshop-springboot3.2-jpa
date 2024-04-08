@@ -23,6 +23,4 @@ public class UserService {
 		Optional<User> Obj = repository.findById(id);
 		return Obj;
 	}
-	
-	
 }
