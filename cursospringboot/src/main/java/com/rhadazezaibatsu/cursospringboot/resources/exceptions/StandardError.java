@@ -3,13 +3,19 @@ package com.rhadazezaibatsu.cursospringboot.resources.exceptions;
 import java.io.Serializable;
 import java.time.Instant;
 
+<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+=======
+>>>>>>> 9e51a959b2caa1553f87a0ac412d7d4c2abfa1d9
 public class StandardError implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+<<<<<<< HEAD
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-mm-dd'T'HH:mm:ss'Z'", timezone = "GMT")
+=======
+>>>>>>> 9e51a959b2caa1553f87a0ac412d7d4c2abfa1d9
 	private Instant timestamp;
 	private Integer status;
 	private String error;
@@ -21,7 +27,11 @@ public class StandardError implements Serializable {
 	public StandardError(Instant timestamp, Integer status, String error, String message, String path) {
 		super();
 		this.timestamp = timestamp;
+<<<<<<< HEAD
 		this.status = status;	
+=======
+		this.status = status;
+>>>>>>> 9e51a959b2caa1553f87a0ac412d7d4c2abfa1d9
 		this.error = error;
 		this.message = message;
 		this.path = path;
